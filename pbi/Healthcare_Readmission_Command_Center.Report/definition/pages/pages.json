@@ -1,0 +1,10 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.0.0/schema.json",
+  "pageOrder": [
+    "page_executive_overview",
+    "page_clinical_cohorts",
+    "page_medication_biomarkers",
+    "page_patient_worklist"
+  ],
+  "activePageName": "page_executive_overview"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "scatter_meds_vs_readmission",
+  "position": {
+    "x": 20,
+    "y": 380,
+    "z": 3002,
+    "height": 310,
+    "width": 1220,
+    "tabOrder": 3002
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "title": "Medication Count Intensity vs Readmission Probability"
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

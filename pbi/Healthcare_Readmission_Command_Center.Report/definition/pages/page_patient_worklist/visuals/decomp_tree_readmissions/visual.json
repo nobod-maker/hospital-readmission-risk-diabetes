@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "decomp_tree_readmissions",
+  "position": {
+    "x": 20,
+    "y": 140,
+    "z": 4001,
+    "height": 300,
+    "width": 1220,
+    "tabOrder": 4001
+  },
+  "visual": {
+    "visualType": "decompositionTree",
+    "query": {
+      "queryState": {
+        "title": "Readmission Root Cause Decomposition Tree"
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

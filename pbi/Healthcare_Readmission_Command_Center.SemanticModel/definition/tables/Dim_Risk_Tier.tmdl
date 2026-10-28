@@ -1,0 +1,34 @@
+table Dim_Risk_Tier
+	lineageTag: 20000000-0000-0000-0000-000000000001
+
+	column risk_tier_key
+		dataType: int64
+		isKey
+		formatString: "0"
+		sourceColumn: risk_tier_key
+
+	column risk_tier_name
+		dataType: string
+		sourceColumn: risk_tier_name
+
+	column min_risk_score
+		dataType: double
+		formatString: "0.00"
+		sourceColumn: min_risk_score
+
+	column max_risk_score
+		dataType: double
+		formatString: "0.00"
+		sourceColumn: max_risk_score
+
+	column recommended_action
+		dataType: string
+		sourceColumn: recommended_action
+
+	partition Dim_Risk_Tier = m
+		mode: import
+		source =
+			let
+				Source = Sql.Database(".", "diabetes_readmission", [Query="SELECT * FROM Dim_Risk_Tier"])
+			in
+				Source

@@ -1,0 +1,11 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Fact_Encounters","Dim_Patient","Dim_Admission_Type","Dim_Discharge_Disposition","Dim_Admission_Source","Dim_Diagnosis","Dim_Medication_Regimen","Dim_Risk_Tier"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1

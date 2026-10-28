@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "chart_insulin_status_rate",
+  "position": {
+    "x": 640,
+    "y": 20,
+    "z": 3001,
+    "height": 340,
+    "width": 600,
+    "tabOrder": 3001
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "title": "Readmission Rate by Insulin Titration Status"
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

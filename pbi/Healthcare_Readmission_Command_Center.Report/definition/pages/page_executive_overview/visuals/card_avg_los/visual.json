@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "card_avg_los",
+  "position": {
+    "x": 580,
+    "y": 20,
+    "z": 1002,
+    "height": 110,
+    "width": 260,
+    "tabOrder": 1002
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "title": "Average Length of Stay"
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

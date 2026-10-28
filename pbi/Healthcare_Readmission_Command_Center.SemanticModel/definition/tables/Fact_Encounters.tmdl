@@ -1,0 +1,124 @@
+table Fact_Encounters
+	lineageTag: 20000000-0000-0000-0000-000000000001
+
+	column encounter_key
+		dataType: int64
+		isKey
+		formatString: "0"
+		sourceColumn: encounter_key
+
+	column encounter_id
+		dataType: int64
+		formatString: "0"
+		sourceColumn: encounter_id
+
+	column patient_key
+		dataType: int64
+		formatString: "0"
+		sourceColumn: patient_key
+
+	column admission_type_key
+		dataType: int64
+		formatString: "0"
+		sourceColumn: admission_type_key
+
+	column discharge_disp_key
+		dataType: int64
+		formatString: "0"
+		sourceColumn: discharge_disp_key
+
+	column admission_source_key
+		dataType: int64
+		formatString: "0"
+		sourceColumn: admission_source_key
+
+	column primary_diag_key
+		dataType: int64
+		formatString: "0"
+		sourceColumn: primary_diag_key
+
+	column med_regimen_key
+		dataType: int64
+		formatString: "0"
+		sourceColumn: med_regimen_key
+
+	column risk_tier_key
+		dataType: int64
+		formatString: "0"
+		sourceColumn: risk_tier_key
+
+	column time_in_hospital
+		dataType: int64
+		formatString: "0"
+		sourceColumn: time_in_hospital
+
+	column num_lab_procedures
+		dataType: int64
+		formatString: "0"
+		sourceColumn: num_lab_procedures
+
+	column num_procedures
+		dataType: int64
+		formatString: "0"
+		sourceColumn: num_procedures
+
+	column num_medications
+		dataType: int64
+		formatString: "0"
+		sourceColumn: num_medications
+
+	column number_outpatient
+		dataType: int64
+		formatString: "0"
+		sourceColumn: number_outpatient
+
+	column number_emergency
+		dataType: int64
+		formatString: "0"
+		sourceColumn: number_emergency
+
+	column number_inpatient
+		dataType: int64
+		formatString: "0"
+		sourceColumn: number_inpatient
+
+	column total_prior_visits
+		dataType: int64
+		formatString: "0"
+		sourceColumn: total_prior_visits
+
+	column number_diagnoses
+		dataType: int64
+		formatString: "0"
+		sourceColumn: number_diagnoses
+
+	column max_glu_serum
+		dataType: string
+		sourceColumn: max_glu_serum
+
+	column a1c_result
+		dataType: string
+		sourceColumn: a1c_result
+
+	column model_risk_score
+		dataType: double
+		formatString: "0.0000"
+		sourceColumn: model_risk_score
+
+	column is_readmitted_30
+		dataType: int64
+		formatString: "0"
+		sourceColumn: is_readmitted_30
+
+	column is_readmitted_any
+		dataType: int64
+		formatString: "0"
+		sourceColumn: is_readmitted_any
+
+	partition Fact_Encounters = m
+		mode: import
+		source =
+			let
+				Source = Sql.Database(".", "diabetes_readmission", [Query="SELECT * FROM Fact_Encounters"])
+			in
+				Source

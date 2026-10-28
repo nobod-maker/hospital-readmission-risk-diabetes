@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "table_patient_worklist",
+  "position": {
+    "x": 20,
+    "y": 460,
+    "z": 4002,
+    "height": 230,
+    "width": 1220,
+    "tabOrder": 4002
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "title": "High-Risk Patient Care Coordination Worklist"
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

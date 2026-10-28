@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "chart_a1c_vs_med_change",
+  "position": {
+    "x": 20,
+    "y": 20,
+    "z": 3000,
+    "height": 340,
+    "width": 600,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "title": "Readmission Rate by HbA1c Biomarker & Medication Change"
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,135 @@
+// ============================================================================
+// Enterprise DAX Measures Repository
+// Project: 03_Healthcare_Diabetes (Hospital Readmission Risk Analysis)
+// Standards: Fully explicit measures, safe DIVIDE(), VAR...RETURN blocks
+// ============================================================================
+
+// --- 1. CORE VOLUME & CLINICAL UTILIZATION MEASURES ---
+
+[Total Encounters] = 
+COUNTROWS(Fact_Encounters)
+
+[Readmitted Encounters] = 
+CALCULATE(
+    COUNTROWS(Fact_Encounters),
+    Fact_Encounters[is_readmitted_30] = 1
+)
+
+[30-Day Readmission Rate] = 
+DIVIDE(
+    [Readmitted Encounters],
+    [Total Encounters],
+    0.0
+)
+
+[National Benchmark Rate %] = 
+0.080
+
+[Readmission Rate Variance] = 
+[30-Day Readmission Rate] - [National Benchmark Rate %]
+
+[Excess Readmission Ratio] = 
+DIVIDE(
+    [30-Day Readmission Rate],
+    [National Benchmark Rate %],
+    1.0
+)
+
+[Avg Length of Stay (Days)] = 
+AVERAGE(Fact_Encounters[time_in_hospital])
+
+[Avg Lab Procedures] = 
+AVERAGE(Fact_Encounters[num_lab_procedures])
+
+[Avg Medications Prescribed] = 
+AVERAGE(Fact_Encounters[num_medications])
+
+[Total Prior Inpatient Visits] = 
+SUM(Fact_Encounters[number_inpatient])
+
+[Inpatient Admission Velocity] = 
+DIVIDE(
+    [Total Prior Inpatient Visits],
+    [Total Encounters],
+    0.0
+)
+
+
+// --- 2. RISK TIER STRATIFICATION & MACHINE LEARNING MEASURES ---
+
+[High Risk Encounters] = 
+CALCULATE(
+    COUNTROWS(Fact_Encounters),
+    Dim_Risk_Tier[risk_tier_name] = "High"
+)
+
+[High Risk Readmit Rate %] = 
+CALCULATE(
+    [30-Day Readmission Rate],
+    Dim_Risk_Tier[risk_tier_name] = "High"
+)
+
+[High Risk Readmission Capture %] = 
+DIVIDE(
+    CALCULATE([Readmitted Encounters], Dim_Risk_Tier[risk_tier_name] = "High"),
+    [Readmitted Encounters],
+    0.0
+)
+
+[Medium Risk Encounters] = 
+CALCULATE(
+    COUNTROWS(Fact_Encounters),
+    Dim_Risk_Tier[risk_tier_name] = "Medium"
+)
+
+[Low Risk Encounters] = 
+CALCULATE(
+    COUNTROWS(Fact_Encounters),
+    Dim_Risk_Tier[risk_tier_name] = "Low"
+)
+
+
+// --- 3. FINANCIAL HRRP PENALTY & CARE COORDINATION ROI MEASURES ---
+
+[Avg Cost per Readmission] = 
+14400.0
+
+[Total Readmission Acute Cost] = 
+[Readmitted Encounters] * [Avg Cost per Readmission]
+
+[Base Medicare DRG Revenue] = 
+125000000.0
+
+[CMS Penalty Exposure] = 
+VAR ERR = [Excess Readmission Ratio]
+VAR RawPenaltyFactor = IF(ERR > 1.0, (ERR - 1.0) * 0.20, 0.0)
+VAR StatutoryCap = 0.030
+VAR EffectivePenalty = MIN(StatutoryCap, RawPenaltyFactor)
+RETURN
+    [Base Medicare DRG Revenue] * EffectivePenalty
+
+[Prevented High Risk Readmissions] = 
+[High Risk Encounters] * [High Risk Readmit Rate %] * 0.25
+
+[Prevented Readmissions Total] = 
+VAR HighRiskSaves = [High Risk Encounters] * [High Risk Readmit Rate %] * 0.25
+VAR MedRiskRate = CALCULATE([30-Day Readmission Rate], Dim_Risk_Tier[risk_tier_name] = "Medium")
+VAR MedRiskSaves = [Medium Risk Encounters] * MedRiskRate * 0.12
+RETURN
+    HighRiskSaves + MedRiskSaves
+
+[Projected Intervention Savings] = 
+[Prevented Readmissions Total] * [Avg Cost per Readmission]
+
+[Total Care Coordination Cost] = 
+([High Risk Encounters] * 250.0) + ([Medium Risk Encounters] * 65.0)
+
+[Intervention Net Savings] = 
+[Projected Intervention Savings] - [Total Care Coordination Cost]
+
+[Care Coordination Program ROI %] = 
+DIVIDE(
+    [Intervention Net Savings],
+    [Total Care Coordination Cost],
+    0.0
+)

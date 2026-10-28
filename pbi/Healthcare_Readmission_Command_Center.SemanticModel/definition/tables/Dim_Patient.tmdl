@@ -1,0 +1,38 @@
+table Dim_Patient
+	lineageTag: 20000000-0000-0000-0000-000000000001
+
+	column patient_key
+		dataType: int64
+		isKey
+		formatString: "0"
+		sourceColumn: patient_key
+
+	column patient_nbr
+		dataType: int64
+		formatString: "0"
+		sourceColumn: patient_nbr
+
+	column race
+		dataType: string
+		sourceColumn: race
+
+	column gender
+		dataType: string
+		sourceColumn: gender
+
+	column age_bracket
+		dataType: string
+		sourceColumn: age_bracket
+
+	column age_midpoint
+		dataType: int64
+		formatString: "0"
+		sourceColumn: age_midpoint
+
+	partition Dim_Patient = m
+		mode: import
+		source =
+			let
+				Source = Sql.Database(".", "diabetes_readmission", [Query="SELECT * FROM Dim_Patient"])
+			in
+				Source

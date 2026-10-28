@@ -1,0 +1,28 @@
+table Dim_Diagnosis
+	lineageTag: 20000000-0000-0000-0000-000000000001
+
+	column diagnosis_key
+		dataType: int64
+		isKey
+		formatString: "0"
+		sourceColumn: diagnosis_key
+
+	column icd9_code
+		dataType: string
+		sourceColumn: icd9_code
+
+	column clinical_category
+		dataType: string
+		sourceColumn: clinical_category
+
+	column category_description
+		dataType: string
+		sourceColumn: category_description
+
+	partition Dim_Diagnosis = m
+		mode: import
+		source =
+			let
+				Source = Sql.Database(".", "diabetes_readmission", [Query="SELECT * FROM Dim_Diagnosis"])
+			in
+				Source

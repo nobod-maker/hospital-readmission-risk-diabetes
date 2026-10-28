@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "card_readmission_rate",
+  "position": {
+    "x": 300,
+    "y": 20,
+    "z": 1001,
+    "height": 110,
+    "width": 260,
+    "tabOrder": 1001
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "title": "30-Day Readmission Rate"
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

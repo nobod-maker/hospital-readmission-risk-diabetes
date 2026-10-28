@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "card_cms_penalty",
+  "position": {
+    "x": 860,
+    "y": 20,
+    "z": 1003,
+    "height": 110,
+    "width": 380,
+    "tabOrder": 1003
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "title": "Estimated CMS HRRP Penalty"
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

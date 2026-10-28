@@ -1,0 +1,90 @@
+[
+  {
+    "cohort_name": "Geriatric Circulatory with Polypharmacy",
+    "demographics": "Age 70+, Primary Diagnosis: Circulatory (Heart Failure / CAD)",
+    "metrics": {
+      "cohort_name": "Geriatric Circulatory with Polypharmacy",
+      "demographics": "Age 70+, Primary Diagnosis: Circulatory (Heart Failure / CAD)",
+      "total_encounters": 908,
+      "readmission_rate_pct": 17.0,
+      "national_benchmark_pct": 8.0,
+      "avg_length_of_stay": 4.2,
+      "avg_medications": 15.4,
+      "med_change_pct": 44.8,
+      "prior_inpatient_avg": 0.6,
+      "uncontrolled_a1c_pct": 8.4
+    },
+    "clinical_action_plan": {
+      "line_1_risk_etiology": "Line 1 (Risk Etiology): Advanced age paired with high cardiovascular polypharmacy (15.4 medications) and active dosage titration (44.8% change rate) elevates 30-day readmission to 17.0%.",
+      "line_2_in_hospital_protocol": "Line 2 (In-Hospital Discharge Protocol): Mandate bedside clinical pharmacist medication reconciliation and bedside heart failure/fluid management education prior to discharge order sign-off.",
+      "line_3_post_acute_protocol": "Line 3 (Post-Acute Follow-Up Protocol): Schedule transitional telephonic nurse check-in at 48 hours post-discharge and guarantee an in-person cardiology/endocrinology clinic consultation within 7 days."
+    },
+    "review_status": "PENDING_CLINICAL_APPROVAL"
+  },
+  {
+    "cohort_name": "Uncontrolled Hyperglycemia with Insulin Titration",
+    "demographics": "Severe Hyperglycemia (A1C >7-8%), Active Insulin Dosage Titration",
+    "metrics": {
+      "cohort_name": "Uncontrolled Hyperglycemia with Insulin Titration",
+      "demographics": "Severe Hyperglycemia (A1C >7-8%), Active Insulin Dosage Titration",
+      "total_encounters": 185,
+      "readmission_rate_pct": 21.1,
+      "national_benchmark_pct": 8.0,
+      "avg_length_of_stay": 4.7,
+      "avg_medications": 14.6,
+      "med_change_pct": 41.1,
+      "prior_inpatient_avg": 0.6,
+      "uncontrolled_a1c_pct": 71.4
+    },
+    "clinical_action_plan": {
+      "line_1_risk_etiology": "Line 1 (Risk Etiology): Glycemic volatility requiring rapid insulin titration (41.1% adjustments) leads to post-discharge medication adherence failure and acute hypoglycemia/hyperglycemia relapse (21.1% readmission rate).",
+      "line_2_in_hospital_protocol": "Line 2 (In-Hospital Discharge Protocol): Deploy Certified Diabetes Care and Education Specialist (CDCES) for 1-on-1 insulin injection self-management training and provide a 30-day home glucometer kit.",
+      "line_3_post_acute_protocol": "Line 3 (Post-Acute Follow-Up Protocol): Initiate clinical pharmacist telehealth check-ins on Days 3, 7, and 14 for insulin titration, with an outpatient primary care visit within 10 days."
+    },
+    "review_status": "PENDING_CLINICAL_APPROVAL"
+  },
+  {
+    "cohort_name": "Frequent Inpatient Recidivism Cohort",
+    "demographics": "High Prior Hospitalization Velocity (>= 2 Inpatient Visits in Prior 12 Months)",
+    "metrics": {
+      "cohort_name": "Frequent Inpatient Recidivism Cohort",
+      "demographics": "High Prior Hospitalization Velocity (>= 2 Inpatient Visits in Prior 12 Months)",
+      "total_encounters": 922,
+      "readmission_rate_pct": 33.8,
+      "national_benchmark_pct": 8.0,
+      "avg_length_of_stay": 4.4,
+      "avg_medications": 15.9,
+      "med_change_pct": 44.0,
+      "prior_inpatient_avg": 2.8,
+      "uncontrolled_a1c_pct": 8.4
+    },
+    "clinical_action_plan": {
+      "line_1_risk_etiology": "Line 1 (Risk Etiology): Frequent hospitalization history (averaging 2.8 prior inpatient stays) reflects severe disease progression and care coordination fragmentation, resulting in an extreme 33.8% readmission rate.",
+      "line_2_in_hospital_protocol": "Line 2 (In-Hospital Discharge Protocol): Convene multidisciplinary case management huddle to address social determinants of health (SDOH), transportation barriers, and outpatient prescription affordability.",
+      "line_3_post_acute_protocol": "Line 3 (Post-Acute Follow-Up Protocol): Assign dedicated community health worker for home visit within 72 hours and enroll in hospital-to-home transitional care management (TCM) program."
+    },
+    "review_status": "PENDING_CLINICAL_APPROVAL"
+  },
+  {
+    "cohort_name": "Post-Acute Skilled Nursing Facility (SNF) Transition",
+    "demographics": "Discharged to Skilled Nursing Facility (SNF) / Sub-Acute Rehabilitation",
+    "metrics": {
+      "cohort_name": "Post-Acute Skilled Nursing Facility (SNF) Transition",
+      "demographics": "Discharged to Skilled Nursing Facility (SNF) / Sub-Acute Rehabilitation",
+      "total_encounters": 1022,
+      "readmission_rate_pct": 17.5,
+      "national_benchmark_pct": 8.0,
+      "avg_length_of_stay": 4.3,
+      "avg_medications": 15.4,
+      "med_change_pct": 45.8,
+      "prior_inpatient_avg": 0.5,
+      "uncontrolled_a1c_pct": 7.8
+    },
+    "clinical_action_plan": {
+      "line_1_risk_etiology": "Line 1 (Risk Etiology): Transition to skilled nursing involves high handover risk, medication transcription errors, and decompensation during physical rehabilitation, driving a 17.5% readmission rate.",
+      "line_2_in_hospital_protocol": "Line 2 (In-Hospital Discharge Protocol): Implement warm clinical handover with receiving SNF medical director, providing a synchronized 7-day electronic medication reconciliation bundle.",
+      "line_3_post_acute_protocol": "Line 3 (Post-Acute Follow-Up Protocol): Conduct joint hospitalist-SNF telehealth rounding at 5 days post-transfer to verify clinical stability and prevent acute ER re-transfer."
+    },
+    "review_status": "PENDING_CLINICAL_APPROVAL"
+  }
+]

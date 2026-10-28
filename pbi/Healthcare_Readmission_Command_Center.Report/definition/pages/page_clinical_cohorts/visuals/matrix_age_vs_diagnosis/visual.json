@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "matrix_age_vs_diagnosis",
+  "position": {
+    "x": 20,
+    "y": 20,
+    "z": 2000,
+    "height": 400,
+    "width": 1220,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "title": "Clinical Risk Heatmap: Age Bracket vs Primary Diagnosis"
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

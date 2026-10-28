@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "slicer_risk_tier",
+  "position": {
+    "x": 20,
+    "y": 20,
+    "z": 4000,
+    "height": 100,
+    "width": 1220,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "title": "Filter Risk Tier"
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

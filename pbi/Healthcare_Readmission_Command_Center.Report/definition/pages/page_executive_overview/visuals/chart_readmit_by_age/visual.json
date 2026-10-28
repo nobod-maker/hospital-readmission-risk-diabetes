@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "chart_readmit_by_age",
+  "position": {
+    "x": 20,
+    "y": 150,
+    "z": 1004,
+    "height": 540,
+    "width": 600,
+    "tabOrder": 1004
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "title": "30-Day Readmission Rate by Age Bracket"
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

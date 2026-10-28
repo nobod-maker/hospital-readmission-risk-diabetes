@@ -1,0 +1,25 @@
+table Dim_Admission_Source
+	lineageTag: 20000000-0000-0000-0000-000000000001
+
+	column admission_source_key
+		dataType: int64
+		isKey
+		formatString: "0"
+		sourceColumn: admission_source_key
+
+	column admission_source_id
+		dataType: int64
+		formatString: "0"
+		sourceColumn: admission_source_id
+
+	column admission_source_name
+		dataType: string
+		sourceColumn: admission_source_name
+
+	partition Dim_Admission_Source = m
+		mode: import
+		source =
+			let
+				Source = Sql.Database(".", "diabetes_readmission", [Query="SELECT * FROM Dim_Admission_Source"])
+			in
+				Source

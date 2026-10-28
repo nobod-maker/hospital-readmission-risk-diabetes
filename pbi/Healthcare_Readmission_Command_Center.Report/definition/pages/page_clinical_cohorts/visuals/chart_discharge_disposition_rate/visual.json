@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "chart_discharge_disposition_rate",
+  "position": {
+    "x": 640,
+    "y": 440,
+    "z": 2002,
+    "height": 250,
+    "width": 600,
+    "tabOrder": 2002
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "title": "Readmission Rate by Discharge Disposition (SNF vs Home)"
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

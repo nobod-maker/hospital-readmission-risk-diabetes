@@ -1,0 +1,27 @@
+relationship Rel_Patient_Encounters
+	fromColumn: Fact_Encounters.patient_key
+	toColumn: Dim_Patient.patient_key
+
+relationship Rel_AdmType_Encounters
+	fromColumn: Fact_Encounters.admission_type_key
+	toColumn: Dim_Admission_Type.admission_type_key
+
+relationship Rel_Discharge_Encounters
+	fromColumn: Fact_Encounters.discharge_disp_key
+	toColumn: Dim_Discharge_Disposition.discharge_disp_key
+
+relationship Rel_AdmSource_Encounters
+	fromColumn: Fact_Encounters.admission_source_key
+	toColumn: Dim_Admission_Source.admission_source_key
+
+relationship Rel_Diagnosis_Encounters
+	fromColumn: Fact_Encounters.primary_diag_key
+	toColumn: Dim_Diagnosis.diagnosis_key
+
+relationship Rel_MedRegimen_Encounters
+	fromColumn: Fact_Encounters.med_regimen_key
+	toColumn: Dim_Medication_Regimen.med_regimen_key
+
+relationship Rel_RiskTier_Encounters
+	fromColumn: Fact_Encounters.risk_tier_key
+	toColumn: Dim_Risk_Tier.risk_tier_key
